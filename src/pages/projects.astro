@@ -26,7 +26,7 @@ import projects from '../data/projects.json'
 					<div
 						id={`project-${project.name}`}
 						class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'>
-						<h2 class='text-xl font-semibold mb-2'>Proyecto {project.name}</h2>
+						<h2 class='text-xl font-semibold mb-2'>{project.name}</h2>
 						<p class='text-gray-300 mb-4'>{project.description}</p>
 						<span class='space-y-2'>
 							Tecnologías: {project.technologies.join(', ')}
