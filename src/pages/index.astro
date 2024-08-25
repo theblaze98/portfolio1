@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
 import Avatar from '../assets/img.jpeg'
@@ -11,7 +11,8 @@ const featuredProjects = projects.filter(project => project.featured)
 
 <Layout title='Mi Portafolio - Home'>
 	<main class='max-w-7xl w-11/12 mx-auto'>
-		<section class='flex flex-col md:flex-row mt-12 items-center justify-between'>
+		<section
+			class='flex flex-col md:flex-row mt-12 items-center justify-between'>
 			<div class='w-full space-y-4'>
 				<h1 class='text-4xl md:text-6xl font-bold'>
 					¡Hola! Soy <span class='text-blue-400'>Dionicio Vargas</span> 👋
@@ -45,12 +46,13 @@ const featuredProjects = projects.filter(project => project.featured)
 				</div>
 			</div>
 			<div class='md:w-1/2 mt-8 md:mt-0'>
-				<Image
+				<Picture
 					src={Avatar}
-					alt='Dionicio Vargas'
+					alt='avatar'
 					width={252}
 					height={252}
 					class='rounded-full border-4 border-blue-400'
+					formats={['avif', 'webp']}
 				/>
 			</div>
 		</section>
