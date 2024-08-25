@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Reloj",
+    "description": "Un reloj digital de la mejor manera",
+    "technologies" : ["React", "TailwindCSS", "TypeScript"],
+    "github_url": "https://github.com/theblaze98/reloj-react",
+    "demo_url": "https://reloj-react-sepia.vercel.app",
+    "featured": false
+  },
+  {
+    "name": "Bot de Discord Javascript",
+    "description": "Un bot de Discord en JavaScript",
+    "technologies" : ["NodeJS", "DiscordJS", "JavaScript"],
+    "github_url": "https://github.com/theblaze98/bot-nino-nakano",
+    "demo_url": null,
+    "featured": false
+  },
+  {
+    "name": "Bot de Discord TypeScript",
+    "description": "Un bot de Discord en TypeScript",
+    "technologies" : ["NodeJS", "DiscordJS", "TypeScript"],
+    "github_url": "https://github.com/theblaze98/nakano-nino-bot-typescript",
+    "demo_url": null,
+    "featured": false
+  },
+  {
+    "name": "Notes App Frontend",
+    "description": "Una Web para guardar Notas",
+    "technologies" : ["JavaScript", "TailwindCSS", "React"],
+    "github_url": "https://github.com/theblaze98/notes-app-frontend",
+    "demo_url": null,
+    "featured": true
+  },
+  {
+    "name": "Notes App Backend",
+    "description": "Una API para guardar Notas",
+    "technologies" : ["JavaScript", "NodeJS", "Express", "MongoDB"],
+    "github_url": "https://github.com/theblaze98/notes-app-backend",
+    "demo_url": null,
+    "featured": true
+  },
+  {
+    "name": "Blog",
+    "description": "Un Blog con NextJs y NestJs",
+    "technologies" : ["TypeScript", "NextJs", "NestJs", "TailwindCSS", "PostgreSQL"],
+    "github_url": "https://github.com/theblaze98/blog",
+    "demo_url": null,
+    "featured": true
+  },
+  {
+    "name": "Social Network",
+    "description": "Una red social con NextJs y NestJs",
+    "technologies" : ["TypeScript", "NextJs", "NestJs", "TailwindCSS", "PostgreSQL"],
+    "github_url": "https://github.com/theblaze98/social-network",
+    "demo_url": null,
+    "featured": true
+  }
+]
