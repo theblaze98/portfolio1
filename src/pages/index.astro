@@ -9,178 +9,180 @@ import projects from '../data/projects.json'
 const featuredProjects = projects.filter(project => project.featured)
 ---
 
-<Layout title='Mi Portafolio - Home'>
-	<main class='max-w-7xl w-11/12 mx-auto'>
-		<section
-			class='flex flex-col md:flex-row mt-12 items-center justify-between'>
-			<div class='w-full space-y-4'>
-				<h1 class='text-4xl md:text-6xl font-bold'>
-					¡Hola! Soy <span class='text-blue-400'>Dionicio Vargas</span> 👋
-				</h1>
-				<p class='text-xl md:text-2xl'>Desarrollador Web</p>
-				<div class='flex space-x-4 items-center'>
-					<a
-						href='https://github.com/theblaze98'
-						target='_blank'
-						rel='noopener noreferrer'>
-						<Icon
-							name='simple-icons:github'
-							class='w-7 h-7 hover:text-blue-300 transition-colors'
-						/>
-					</a>
-					<a
-						href='https://www.linkedin.com/in/dionicio-vargas-832821237/'
-						target='_blank'
-						rel='noopener noreferrer'>
-						<Icon
-							name='simple-icons:linkedin'
-							class='w-7 h-7 hover:text-blue-300 transition-colors'
-						/>
-					</a>
-					<a href='mailto:dioniciojvargas@gmail.com'>
-						<Icon
-							name='mdi:email'
-							class='w-7 h-7 hover:text-blue-300 transition-colors'
-						/>
-					</a>
-				</div>
-			</div>
-			<div class='md:w-1/2 mt-8 md:mt-0'>
-				<Picture
-					src={Avatar}
-					alt='avatar'
-					width={252}
-					height={252}
-					class='rounded-full border-4 border-blue-400'
-					formats={['avif', 'webp']}
-				/>
-			</div>
-		</section>
-		<section class='mt-16'>
-			<h2 class='text-3xl font-bold mb-4'>Sobre Mí</h2>
-			<div
-				class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'>
-				<div class='flex flex-col md:flex-row gap-6'>
-					<div class='flex-1 space-y-4'>
-						<div class='flex items-center space-x-2'>
-							<Icon
-								name='mdi:user'
-								class='w-6 h-6 text-blue-400'
-							/>
-							<p>
-								Apasionado desarrollador web con experiencia en tecnologías
-								front-end y back-end.
-							</p>
-						</div>
-						<div class='flex items-center space-x-2'>
-							<Icon
-								name='mdi:briefcase'
-								class='w-6 h-6 text-blue-400'
-							/>
-							<p>
-								1+ años de experiencia en desarrollo de aplicaciones web
-								escalables y responsivas.
-							</p>
-						</div>
-					</div>
-					<div class='flex-1 space-y-4'>
-						<p>
-							Me especializo en crear soluciones web innovadoras y eficientes.
-							Mi enfoque se centra en la usabilidad, el rendimiento y las
-							mejores prácticas de desarrollo.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+<Layout title="Portafolio de Dionicio Vargas - Desarrollador Web">
+  <main class="max-w-7xl w-11/12 mx-auto">
+    <header class="flex flex-col md:flex-row mt-12 items-center justify-between">
+      <div class="w-full space-y-4">
+        <h1 class="text-4xl md:text-6xl font-bold">
+          ¡Hola!👋 Soy <span class="text-blue-400">Dionicio Vargas</span>
+        </h1>
+        <p class="text-xl md:text-2xl">Desarrollador Web Full Stack</p>
+        <nav aria-label="Enlaces a redes sociales" class="flex space-x-4 items-center">
+          <a
+            href="https://github.com/theblaze98"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub de Dionicio Vargas"
+          >
+            <Icon
+              name="simple-icons:github"
+              class="w-7 h-7 hover:text-blue-300 transition-colors"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dionicio-vargas-832821237/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Dionicio Vargas"
+          >
+            <Icon
+              name="simple-icons:linkedin"
+              class="w-7 h-7 hover:text-blue-300 transition-colors"
+            />
+          </a>
+          <a
+            href="mailto:dioniciojvargas@gmail.com"
+            aria-label="Enviar un correo a Dionicio Vargas"
+          >
+            <Icon
+              name="mdi:email"
+              class="w-7 h-7 hover:text-blue-300 transition-colors"
+            />
+          </a>
+        </nav>
+      </div>
+      <div class="mt-8 md:mt-0">
+        <Picture
+          src={Avatar}
+          alt="Foto de Dionicio Vargas, Desarrollador Web"
+          width={252}
+          height={252}
+          class="rounded-full border-4 border-blue-400"
+          formats={['avif', 'webp']}
+        />
+      </div>
+    </header>
 
-		<!-- <section class='mt-16'>
-			<h2 class='text-3xl font-bold mb-4'>Experiencia</h2>
-			<div class='space-y-4'>
-				<div
-					class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'>
-					<h3 class='text-xl font-semibold'>Desarrollador Full Stack</h3>
-					<p class='text-gray-300'>Empresa XYZ • 2020 - Presente</p>
-				</div>
-				<div
-					class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'>
-					<h3 class='text-xl font-semibold'>Desarrollador Front-end</h3>
-					<p class='text-gray-300'>Empresa ABC • 2018 - 2020</p>
-				</div>
-			</div>
-		</section> -->
-		<section class='mt-16'>
-			<h2 class='text-3xl font-bold mb-4'>Tecnologías</h2>
-			<div class='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4'>
-				{
-					technologies.map(tech => (
-						<div class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-2 text-center flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'>
-							<Icon
-								name={tech.icon}
-								class='text-3xl'
-							/>
-							<span>{tech.name}</span>
-						</div>
-					))
-				}
-			</div>
-		</section>
-		<section class='mt-16'>
-			<h2 class='text-3xl font-bold mb-4'>Proyectos Destacados</h2>
-			<div class='grid md:grid-cols-2 gap-8'>
-				{
-					featuredProjects.map(project => (
-						<div class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'>
-							<h3 class='text-xl font-semibold mb-2'>{project.name}</h3>
-							<p class='text-gray-300 mb-4'>{project.description}</p>
-							<span class='space-y-2'>
-								Tecnologías: {project.technologies.join(', ')}
-							</span>
-							<div class='flex space-x-4 mt-4'>
-								{project.demo_url && (
-									<a
-										href={project.demo_url}
-										target='_blank'
-										rel='noopener noreferrer'
-										class='text-lg hover:text-blue-400 transition-colors flex gap-2 items-center'>
-										<Icon
-											name='mdi:web'
-											class='w-8 h-8'
-										/>
-										<span>Demo</span>
-									</a>
-								)}
-								<a
-									href={project.github_url}
-									target='_blank'
-									rel='noopener noreferrer'
-									class='text-lg hover:text-blue-400 transition-colors flex gap-2 items-center'>
-									<Icon
-										name='simple-icons:github'
-										class='w-8 h-8'
-									/>
-									<span>GitHub</span>
-								</a>
-							</div>
-						</div>
-					))
-				}
-				<div
-					class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex items-center justify-center'>
-					<a
-						href='/projects'
-						class='text-2xl transition-colors hover:text-blue-400'
-						>Ver Mas...</a
-					>
-				</div>
-			</div>
-		</section>
-	</main>
-	<footer class='p-8'>
-		<p class='text-center text-gray-300'>© 2023 Mi Portafolio.</p>
-		<p class='text-center text-gray-300'>Dionicio Vargas</p>
-		<p class='text-center text-gray-300'>
-			Contacto al correo: dioniciojvargas1226@gmail
-		</p>
-	</footer>
+    <section class="mt-16" aria-labelledby="sobre-mi">
+      <h2 id="sobre-mi" class="text-3xl font-bold mb-4">Sobre Mí</h2>
+      <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex-1 space-y-4">
+            <div class="flex items-center space-x-2">
+              <Icon
+                name="mdi:user"
+                class="w-6 h-6 text-blue-400"
+              />
+              <p>Apasionado desarrollador web especializado en frontend y backend.</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Icon
+                name="mdi:briefcase"
+                class="w-6 h-6 text-blue-400"
+              />
+              <p>Más de 1 año de experiencia en desarrollo de aplicaciones web escalables y responsivas.</p>
+            </div>
+          </div>
+          <div class="flex-1 space-y-4">
+            <p>
+              Me especializo en crear soluciones web innovadoras y eficientes,
+              con un enfoque en usabilidad, rendimiento y mejores prácticas de desarrollo.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="mt-16" aria-labelledby="tecnologias">
+      <h2 id="tecnologias" class="text-3xl font-bold mb-4">Tecnologías</h2>
+      <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4">
+        {technologies.map(tech => (
+          <div
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-2 text-center flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800"
+            aria-label={tech.name}
+          >
+            <Icon
+              name={tech.icon}
+              class="text-3xl"
+            />
+            <span>{tech.name}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-16" aria-labelledby="proyectos-destacados">
+      <h2 id="proyectos-destacados" class="text-3xl font-bold mb-4">Proyectos Destacados</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {featuredProjects.map(project => (
+          <article
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800"
+            aria-labelledby={`proyecto-${project.name}`}
+						id={`project-${project.name.replace(/\s+/g, '-').toLowerCase()}`}
+          >
+            <h3 class="text-lg font-semibold mb-2 md:text-xl">
+              {project.name}
+            </h3>
+            <p class="text-gray-300 mb-4 text-sm md:text-md">
+              {project.description}
+            </p>
+            <span class="space-y-2 text-sm md:text-md">
+              Tecnologías: {project.technologies.join(', ')}
+            </span>
+            <div class="flex space-x-4 mt-4">
+              {project.demo_url && (
+                <a
+                  href={project.demo_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-lg hover:text-blue-400 transition-colors flex gap-2 items-center"
+                  aria-label={`Ver demo del proyecto ${project.name}`}
+                >
+                  <Icon
+                    name="mdi:web"
+                    class="w-8 h-8"
+                  />
+                  <span>Demo</span>
+                </a>
+              )}
+              <a
+                href={project.github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-lg hover:text-blue-400 transition-colors flex gap-2 items-center"
+                aria-label={`Ver código fuente del proyecto ${project.name}`}
+              >
+                <Icon
+                  name="simple-icons:github"
+                  class="w-8 h-8"
+                />
+                <span>GitHub</span>
+              </a>
+            </div>
+          </article>
+        ))}
+        <div
+          class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex items-center justify-center"
+          aria-labelledby="ver-mas"
+        >
+          <a
+            href="/projects"
+            class="text-2xl transition-colors hover:text-blue-400"
+            aria-label="Ver más proyectos"
+          >
+            Ver Más...
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-12" aria-labelledby="footer-info">
+    <p id="footer-info" class="text-center text-gray-300 text-md md:text-lg">
+      © 2023 Portafolio de Dionicio Vargas.
+    </p>
+    <p class="text-center text-gray-300 text-md md:text-lg">
+      Contacto: <a href="mailto:dioniciojvargas1226@gmail.com">dioniciojvargas1226@gmail.com</a>
+    </p>
+  </footer>
 </Layout>
