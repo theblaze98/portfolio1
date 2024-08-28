@@ -46,7 +46,7 @@ const featuredProjects = projects.filter(project => project.featured)
           >
             <Icon
               name="mdi:email"
-              class="w-7 h-7 hover:text-blue-300 transition-colors"
+              class="w-8 h-8 hover:text-blue-300 transition-colors"
             />
           </a>
         </nav>
@@ -65,7 +65,7 @@ const featuredProjects = projects.filter(project => project.featured)
 
     <section class="mt-16" aria-labelledby="sobre-mi">
       <h2 id="sobre-mi" class="text-3xl font-bold mb-4">Sobre Mí</h2>
-      <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800">
+      <article class="p-6">
         <div class="flex flex-col md:flex-row gap-6">
           <div class="flex-1 space-y-4">
             <div class="flex items-center space-x-2">
@@ -98,7 +98,7 @@ const featuredProjects = projects.filter(project => project.featured)
       <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4">
         {technologies.map(tech => (
           <div
-            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-2 text-center flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800"
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg px-2 py-3 text-center flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800"
             aria-label={tech.name}
           >
             <Icon
@@ -123,7 +123,7 @@ const featuredProjects = projects.filter(project => project.featured)
             <h3 class="text-lg font-semibold mb-2 md:text-xl">
               {project.name}
             </h3>
-            <p class="text-gray-300 mb-4 text-sm md:text-md">
+            <p class="text-gray-300 mb-4 text-sm md:text-md lg:text-lg">
               {project.description}
             </p>
             <span class="space-y-2 text-sm md:text-md">
@@ -140,7 +140,7 @@ const featuredProjects = projects.filter(project => project.featured)
                 >
                   <Icon
                     name="mdi:web"
-                    class="w-8 h-8"
+                    class="w-7 h-7 md:w-6 md:h-6"
                   />
                   <span>Demo</span>
                 </a>
@@ -154,7 +154,7 @@ const featuredProjects = projects.filter(project => project.featured)
               >
                 <Icon
                   name="simple-icons:github"
-                  class="w-8 h-8"
+                  class="w-7 h-7 md:w-6 md:h-6"
                 />
                 <span>GitHub</span>
               </a>

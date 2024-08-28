@@ -23,52 +23,49 @@ import projects from '../data/projects.json'
 	<main class='container mx-auto px-4 py-8'>
 		<section class='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
 			{
-				projects.map((project) => (
+				projects.map(project => (
 					<article
-            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800"
-            aria-labelledby={`proyecto-${project.name}`}
-						id={`project-${project.name.replace(/\s+/g, '-').toLowerCase()}`}
-          >
-            <h3 class="text-lg font-semibold mb-2 md:text-xl">
-              {project.name}
-            </h3>
-            <p class="text-gray-300 mb-4 text-sm md:text-md">
-              {project.description}
-            </p>
-            <span class="space-y-2 text-sm md:text-md">
-              Tecnologías: {project.technologies.join(', ')}
-            </span>
-            <div class="flex space-x-4 mt-4">
-              {project.demo_url && (
-                <a
-                  href={project.demo_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-lg hover:text-blue-400 transition-colors flex gap-2 items-center"
-                  aria-label={`Ver demo del proyecto ${project.name}`}
-                >
-                  <Icon
-                    name="mdi:web"
-                    class="w-8 h-8"
-                  />
-                  <span>Demo</span>
-                </a>
-              )}
-              <a
-                href={project.github_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-lg hover:text-blue-400 transition-colors flex gap-2 items-center"
-                aria-label={`Ver código fuente del proyecto ${project.name}`}
-              >
-                <Icon
-                  name="simple-icons:github"
-                  class="w-8 h-8"
-                />
-                <span>GitHub</span>
-              </a>
-            </div>
-          </article>
+						class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'
+						aria-labelledby={`proyecto-${project.name}`}
+						id={`project-${project.name.replace(/\s+/g, '-').toLowerCase()}`}>
+						<h3 class='text-lg font-semibold mb-2 md:text-xl'>
+							{project.name}
+						</h3>
+						<p class='text-gray-300 mb-4 text-sm md:text-md lg:text-lg'>
+							{project.description}
+						</p>
+						<span class='space-y-2 text-sm md:text-md'>
+							Tecnologías: {project.technologies.join(', ')}
+						</span>
+						<div class='flex space-x-4 mt-4'>
+							{project.demo_url && (
+								<a
+									href={project.demo_url}
+									target='_blank'
+									rel='noopener noreferrer'
+									class='text-lg hover:text-blue-400 transition-colors flex gap-2 items-center'
+									aria-label={`Ver demo del proyecto ${project.name}`}>
+									<Icon
+										name='mdi:web'
+										class='w-7 h-7 md:w-6 md:h-6'
+									/>
+									<span>Demo</span>
+								</a>
+							)}
+							<a
+								href={project.github_url}
+								target='_blank'
+								rel='noopener noreferrer'
+								class='text-lg hover:text-blue-400 transition-colors flex gap-2 items-center'
+								aria-label={`Ver código fuente del proyecto ${project.name}`}>
+								<Icon
+									name='simple-icons:github'
+									class='w-7 h-7 md:w-6 md:h-6'
+								/>
+								<span>GitHub</span>
+							</a>
+						</div>
+					</article>
 				))
 			}
 		</section>
