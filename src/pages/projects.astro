@@ -25,7 +25,7 @@ import ProjectCard from '../components/ProjectCard.astro'
 		<section class='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
 			{
 				projects.map(project => (
-					<ProjectCard name={project.name} description={project.description} technologies={project.technologies.join(',', ' - ')} demo_url={project.demo_url} github_url={project.github_url}  />
+					<ProjectCard name={project.name} description={project.description} technologies={project.technologies} demo_url={project.demo_url} github_url={project.github_url}  />
 				))
 			}
 		</section>
