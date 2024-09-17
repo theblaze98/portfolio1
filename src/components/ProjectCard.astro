@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon/components'
+import Layout from '../layouts/Layout.astro'
+import projects from '../data/projects.json'
+
+const { name, description, technologies, demo_url, github_url } = Astro.props
+
+---
+
+<article
+  class='bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800'
+  aria-labelledby={`proyecto-${name}`}
+  id={`project-${name.replace(/\s+/g, '-').toLowerCase()}`}>
+  <h3 class='text-lg font-semibold mb-2 md:text-xl'>
+    {name}
+  </h3>
+  <p class='text-gray-300 mb-4 text-sm md:text-md lg:text-lg'>
+    {description}
+  </p>
+  <span class='space-y-2 text-sm md:text-md'>
+    Tecnologías: {technologies.join(', ')}
+  </span>
+  <div class='flex space-x-4 mt-4'>
+    {demo_url && (
+      <a
+        href={demo_url}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='text-lg hover:text-blue-400 transition-colors flex gap-2 items-center'
+        aria-label={`Ver demo del proyecto ${name}`}>
+        <Icon
+          name='mdi:web'
+          class='w-7 h-7 md:w-6 md:h-6'
+        />
+        <span>Demo</span>
+      </a>
+    )}
+    <a
+      href={github_url}
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-lg hover:text-blue-400 transition-colors flex gap-2 items-center'
+      aria-label={`Ver código fuente del proyecto ${name}`}>
+      <Icon
+        name='simple-icons:github'
+        class='w-7 h-7 md:w-6 md:h-6'
+      />
+      <span>GitHub</span>
+    </a>
+  </div>
+</article>
