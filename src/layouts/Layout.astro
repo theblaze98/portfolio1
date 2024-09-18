@@ -1,117 +1,100 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
+import SEO from "../components/SEO.astro";
+import Github from "../components/icons/Github.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Phone from "../components/icons/Phone.astro";
+import Mail from "../components/icons/Mail.astro";
+import MapPin from "../components/icons/MapPin.astro";
 
 interface Props {
-	title: string
+	title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='es'>
+<html lang="es">
 	<head>
-		<meta charset='UTF-8' />
-		<meta
-			name='viewport'
-			content='width=device-width, initial-scale=1.0'
-		/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
 
-		<meta
-			name='description'
-			content='Dionicio Vargas es un desarrollador web dedicado con más de un año de experiencia, especializado en crear soluciones web innovadoras, rápidas y eficientes que mejoran la experiencia del usuario.'
-		/>
-		<meta
-			name='keywords'
-			content='Dionicio Vargas, desarrollador web, desarrollo web, soluciones web, programación, portfolio, desarrollador full-stack'
-		/>
-		<meta
-			name='author'
-			content='Dionicio Vargas'
-		/>
-		<meta
-			name='robots'
-			content='index, follow'
-		/>
-		<meta
-			name='theme-color'
-			content='#1E40AF'
-		/>
-
-		<link
-			rel='icon'
-			href='/favicon.jpeg'
-			sizes='32x32'
-			type='image/jpeg'
-		/>
-
-		<!-- Open Graph / Facebook -->
-		<meta
-			property='og:type'
-			content='website'
-		/>
-		<meta
-			property='og:title'
-			content={title}
-		/>
-		<meta
-			property='og:description'
-			content='Dionicio Vargas es un desarrollador web dedicado con más de un año de experiencia, especializado en crear soluciones web innovadoras, rápidas y eficientes que mejoran la experiencia del usuario.'
-		/>
-		<meta
-			property='og:image'
-			content='https://dionicio.vercel.app/image.jpg'
-		/>
-		<meta
-			property='og:image:width'
-			content='854'
-		/>
-		<meta
-			property='og:image:height'
-			content='480'
-		/>
-		<meta
-			property='og:url'
-			content='https://dionicio.vercel.app'
-		/>
-		<meta
-			property='og:site_name'
-			content='Dionicio Vargas - Desarrollador Web'
-		/>
-
-		<!-- Twitter -->
-		<meta
-			name='twitter:card'
-			content='summary_large_image'
-		/>
-		<meta
-			name='twitter:title'
-			content={title}
-		/>
-		<meta
-			name='twitter:description'
-			content='Dionicio Vargas es un desarrollador web dedicado con más de un año de experiencia, especializado en crear soluciones web innovadoras, rápidas y eficientes que mejoran la experiencia del usuario.'
-		/>
-		<meta
-			name='twitter:image'
-			content='https://dionicio.vercel.app/image.jpg'
-		/>
-		<meta
-			name='twitter:url'
-			content='https://dionicio.vercel.app'
-		/>
+		<SEO title={title} />
 
 		<ViewTransitions />
 	</head>
 	<body
-		class='min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 text-white'>
+		class="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 text-white"
+	>
 		<slot />
+		<footer
+			class="mt-16 bg-gray-900 text-white px-12 py-12 border-t border-gray-800"
+		>
+			<div class="container mx-auto px-4">
+				<div class="flex flex-wrap justify-center  items-center">
+					<div class="w-full md:w-1/2 mb-6 md:mb-0">
+						<h3 class="text-2xl font-bold mb-4">Dionicio Vargas</h3>
+						<p class="mb-4">Desarrollador Web Full Stack</p>
+						<div class="flex space-x-4">
+							<a
+								href="https://github.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="GitHub"
+								class="hover:text-blue-300 transition-colors"
+							>
+								<Github />
+							</a>
+							<a
+								href="https://linkedin.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LinkedIn"
+								class="hover:text-blue-300 transition-colors"
+							>
+								<LinkedIn />
+							</a>
+							<a
+								href="mailto:dioniciovargas1226@gmail.com"
+								aria-label="Email"
+								class="hover:text-blue-300 transition-colors"
+							>
+								<Mail />
+							</a>
+						</div>
+					</div>
+					<div class="w-full md:w-1/2 mb-6 md:mb-0">
+						<h4 class="text-xl font-semibold mb-4">Contacto</h4>
+						<ul class="space-y-2">
+							<li class="flex items-center">
+								<MapPin class="w-5 h-5 mr-2" />
+								<span>Ciudad, País</span>
+							</li>
+							<li class="flex items-center">
+								<Mail class="w-5 h-5 mr-2" />
+								<a
+									href="mailto:dioniciovargas1226@gmail.com"
+									class="hover:underline"
+									>dioniciovargas1226@gmail.com</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mt-8 pt-8 border-t border-gray-800 text-center">
+					<p>
+						&copy; 2023 Dionicio Vargas. Todos los derechos
+						reservados.
+					</p>
+				</div>
+			</div>
+		</footer>
+		<style is:global>
+			body {
+				font-family: "Poppins", Arial, Helvetica, sans-serif;
+			}
+		</style>
 	</body>
 </html>
-
-<style is:global>
-	body {
-		font-family: 'Poppins', Arial, Helvetica, sans-serif;
-	}
-</style>

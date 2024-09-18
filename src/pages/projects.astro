@@ -7,10 +7,10 @@ import projects from '../data/projects.json'
 
 <Layout title='Proyectos de Dionicio Vargas - Portafolio'>
 	<header class='p-4'>
-		<nav class='flex justify-between items-center'>
+		<nav class='flex justify-between items-center prose prose-invert'>
 			<a
 				href='/'
-				class='text-xl hover:text-blue-400 transition-colors flex gap-2 items-center'
+				class='text-xl hover:text-blue-400 transition-colors flex gap-2 items-center no-underline'
 				aria-label='Volver al Inicio'>
 				<Icon
 					name='mdi:arrow-left-circle'
@@ -21,8 +21,8 @@ import projects from '../data/projects.json'
 			<h1 class='text-2xl font-bold'>Mis Proyectos</h1>
 		</nav>
 	</header>
-	<main class='container mx-auto px-4 py-8'>
-		<section class='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+	<main class='mx-auto max-w-4xl w-11/12 mt-12'>
+		<section class='grid gap-8 md:grid-cols-2 w-full'>
 			{
 				projects.map(project => (
 					<ProjectCard
@@ -30,7 +30,8 @@ import projects from '../data/projects.json'
 						description={project.description}
 						technologies={project.technologies}
 						demo_url={project.demo_url}
-						github_url={project.github_url} />
+						github_url={project.github_url}
+						class="prose prose-invert"/>
 				))
 			}
 		</section>

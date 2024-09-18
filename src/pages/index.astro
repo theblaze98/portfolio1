@@ -3,6 +3,9 @@ import { Picture } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
+import Github from '../components/icons/Github.astro'
+import LinkedIn from '../components/icons/LinkedIn.astro'
+import Mail from '../components/icons/Mail.astro'
 import Avatar from '../assets/img.jpeg'
 import technologies from '../data/technologies.json'
 import projects from '../data/projects.json'
@@ -11,13 +14,13 @@ const featuredProjects = projects.filter(project => project.featured)
 ---
 
 <Layout title="Portafolio de Dionicio Vargas - Desarrollador Web">
-  <main class="max-w-7xl w-11/12 mx-auto">
+  <main class="max-w-4xl w-11/12 mx-auto">
     <header class="flex flex-col md:flex-row mt-12 items-center justify-between">
       <div class="w-full space-y-4">
-        <h1 class="text-4xl md:text-6xl font-bold">
+        <h1 class="text-5xl font-bold">
           ¡Hola!👋 Soy <span class="text-blue-400">Dionicio Vargas</span>
         </h1>
-        <p class="text-xl md:text-2xl">Desarrollador Web Full Stack</p>
+        <p class="text-xl md:text-2xl text-gray-400">Desarrollador Web Full Stack</p>
         <nav aria-label="Enlaces a redes sociales" class="flex space-x-4 items-center">
           <a
             href="https://github.com/theblaze98"
@@ -25,10 +28,7 @@ const featuredProjects = projects.filter(project => project.featured)
             rel="noopener noreferrer"
             aria-label="GitHub de Dionicio Vargas"
           >
-            <Icon
-              name="simple-icons:github"
-              class="w-7 h-7 hover:text-blue-300 transition-colors"
-            />
+            <Github />
           </a>
           <a
             href="https://www.linkedin.com/in/dionicio-vargas-832821237/"
@@ -36,19 +36,13 @@ const featuredProjects = projects.filter(project => project.featured)
             rel="noopener noreferrer"
             aria-label="LinkedIn de Dionicio Vargas"
           >
-            <Icon
-              name="simple-icons:linkedin"
-              class="w-7 h-7 hover:text-blue-300 transition-colors"
-            />
+            <LinkedIn />
           </a>
           <a
             href="mailto:dioniciovargas1226@gmail.com"
             aria-label="Enviar un correo a Dionicio Vargas"
           >
-            <Icon
-              name="mdi:email"
-              class="w-8 h-8 hover:text-blue-300 transition-colors"
-            />
+            <Mail />
           </a>
         </nav>
       </div>
@@ -56,36 +50,36 @@ const featuredProjects = projects.filter(project => project.featured)
         <Picture
           src={Avatar}
           alt="Foto de Dionicio Vargas, Desarrollador Web"
-          width={252}
-          height={252}
+          width={360}
+          height={360}
           class="rounded-full border-4 border-blue-400"
           formats={['avif', 'webp']}
         />
       </div>
     </header>
 
-    <section class="mt-16" aria-labelledby="sobre-mi">
+    <section class="mt-16" aria-labelledby="sobre-mi prose prose-invert">
       <h2 id="sobre-mi" class="text-3xl font-bold mb-4">Sobre Mí</h2>
       <article class="p-6">
         <div class="flex flex-col md:flex-row gap-6">
           <div class="flex-1 space-y-4">
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 ">
               <Icon
                 name="mdi:user"
-                class="w-6 h-6 text-blue-400"
+                class="w-9 h-9 md:w-12 md:h-12 mr-3 block text-blue-400"
               />
-              <p>Apasionado desarrollador web especializado en frontend y backend.</p>
+              <p class="md:prose-lg">Apasionado desarrollador web especializado en frontend y backend.</p>
             </div>
             <div class="flex items-center space-x-2">
               <Icon
                 name="mdi:briefcase"
-                class="w-6 h-6 text-blue-400"
+                class="w-9 h-9 md:w-12 md:h-12 mr-3 block text-blue-400"
               />
-              <p>Más de 1 año de experiencia en desarrollo de aplicaciones web escalables y responsivas.</p>
+              <p class="md:prose-lg">Más de 1 año de experiencia en desarrollo de aplicaciones web escalables y responsivas.</p>
             </div>
           </div>
           <div class="flex-1 space-y-4">
-            <p>
+            <p class="md:prose-lg">
               Me especializo en crear soluciones web innovadoras y eficientes,
               con un enfoque en usabilidad, rendimiento y mejores prácticas de desarrollo.
             </p>
@@ -121,7 +115,8 @@ const featuredProjects = projects.filter(project => project.featured)
 						description={project.description}
 						technologies={project.technologies}
 						demo_url={project.demo_url}
-						github_url={project.github_url} />
+						github_url={project.github_url}
+            class="prose prose-invert" />
         ))}
         <div
           class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex items-center justify-center"
@@ -129,7 +124,7 @@ const featuredProjects = projects.filter(project => project.featured)
         >
           <a
             href="/projects"
-            class="text-2xl transition-colors hover:text-blue-400"
+            class="text-2xl transition-colors hover:text-blue-400 no-underline"
             aria-label="Ver más proyectos"
           >
             Ver Más...
@@ -138,13 +133,4 @@ const featuredProjects = projects.filter(project => project.featured)
       </div>
     </section>
   </main>
-
-  <footer class="p-12" aria-labelledby="footer-info">
-    <p id="footer-info" class="text-center text-gray-300 text-md md:text-lg">
-      © 2023 Portafolio de Dionicio Vargas.
-    </p>
-    <p class="text-center text-gray-300 text-md md:text-lg">
-      Contacto: <a href="mailto:dioniciovargas1226@gmail.com">dioniciojvargas1226@gmail.com</a>
-    </p>
-  </footer>
 </Layout>
