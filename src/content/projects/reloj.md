@@ -5,7 +5,7 @@ technologies: [React, TailwindCSS, TypeScript]
 github_url: https://github.com/theblaze98/reloj-react
 demo_url: https://reloj-react-sepia.vercel.app
 image: modern-reloj.webp
-status: "completado"
+status: "en desarrollo"
 roles: [Desarrollador, Diseñador de UI]
 featured: false
 ---

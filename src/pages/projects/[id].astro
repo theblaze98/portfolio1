@@ -28,13 +28,14 @@ const {
 	technologies,
 	roles,
 	featured,
+	description
 } = data;
 
 const { Content } = await render(project);
 ---
 
 <Layout title={`Proyecto: ${name}`}>
-	<main class="mx-auto px-4 py-8 max-w-5xl w-11/12">
+	<main class="mx-auto px-4 py-8 max-w-4xl w-11/12">
 		<a
 			href="/projects"
 			class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6"
@@ -55,12 +56,14 @@ const { Content } = await render(project);
 						alt={`Captura de pantalla de ${name}`}
 						width={1200}
 						height={675}
+						class='aspect-video'
+						formats={["avif", "webp"]}
 					/>
 					<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 					<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
-						<p class="text-2xl font-bold mb-2">{name}</p>
+						<p transition:name={`title-${slug}`} class="text-2xl font-bold mb-2">{name}</p>
 						<p class="text-lg opacity-75">
-							Un reloj digital moderno y elegante
+						{description.slice(0, 100) + "..."}
 						</p>
 					</div>
 				</div>
@@ -74,7 +77,7 @@ const { Content } = await render(project);
 				<div class="flex flex-wrap gap-2 mb-4">
 					{
 						technologies.map((tech) => (
-							<span class="bg-blue-500 text-white text-sm px-3 py-1 rounded-full">
+							<span class="bg-blue-900 text-white text-sm px-3 py-1 rounded-full">
 								{tech}
 							</span>
 						))

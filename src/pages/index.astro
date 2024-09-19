@@ -6,6 +6,8 @@ import ProjectCard from '../components/ProjectCard.astro'
 import Github from '../components/icons/Github.astro'
 import LinkedIn from '../components/icons/LinkedIn.astro'
 import Mail from '../components/icons/Mail.astro'
+import User from '../components/icons/User.astro'
+import Briefcase from '../components/icons/Briefcase.astro'
 import Avatar from '../assets/img.webp'
 import technologies from '../data/technologies.json'
 import projects from '../data/projects.json'
@@ -15,6 +17,12 @@ const featuredProjects = projects.filter(project => project.featured)
 ---
 
 <Layout title="Portafolio de Dionicio Vargas - Desarrollador Web">
+  <header class="p-4">
+    <nav class="flex justify-center space-x-4">
+      <a href="/" class="hover:text-blue-300 transition-colors">Inicio</Link>
+      <a href="/projects" class="hover:text-blue-300 transition-colors">Mis Proyectos</Link>
+    </nav>
+  </header>
   <main class="max-w-5xl w-11/12 mx-auto">
     <header class="flex flex-col md:flex-row mt-12 items-center justify-between">
       <div class="w-full space-y-4">
@@ -28,6 +36,7 @@ const featuredProjects = projects.filter(project => project.featured)
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub de Dionicio Vargas"
+            class="hover:text-blue-300 transition-colors"
           >
             <Github />
           </a>
@@ -36,12 +45,14 @@ const featuredProjects = projects.filter(project => project.featured)
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn de Dionicio Vargas"
+            class="hover:text-blue-300 transition-colors"
           >
             <LinkedIn />
           </a>
           <a
             href="mailto:dioniciovargas1226@gmail.com"
             aria-label="Enviar un correo a Dionicio Vargas"
+            class="hover:text-blue-300 transition-colors"s
           >
             <Mail />
           </a>
@@ -64,18 +75,16 @@ const featuredProjects = projects.filter(project => project.featured)
       <article class="p-6">
         <div class="flex flex-col md:flex-row gap-6">
           <div class="flex-1 space-y-4">
-            <div class="flex items-center space-x-2 ">
-              <Icon
-                name="mdi:user"
-                class="w-9 h-9 md:w-12 md:h-12 mr-3 block text-blue-400"
-              />
+            <div class="flex items-center w-full">
+              <div class="text-xl mr-2 text-blue-400">
+                <User />
+              </div>
               <p class="md:prose-lg">Apasionado desarrollador web especializado en frontend y backend.</p>
             </div>
-            <div class="flex items-center space-x-2">
-              <Icon
-                name="mdi:briefcase"
-                class="w-9 h-9 md:w-12 md:h-12 mr-3 block text-blue-400"
-              />
+            <div class="flex items-center w-full flex-1">
+              <div class="text-xl mr-2 text-blue-400">
+                <Briefcase />
+              </div>
               <p class="md:prose-lg">Más de 1 año de experiencia en desarrollo de aplicaciones web escalables y responsivas.</p>
             </div>
           </div>
@@ -109,7 +118,7 @@ const featuredProjects = projects.filter(project => project.featured)
 
     <section class="mt-16" aria-labelledby="proyectos-destacados">
       <h2 id="proyectos-destacados" class="text-3xl font-bold mb-4">Proyectos Destacados</h2>
-      <div class="columns-1 md:columns-2 gap-8">
+      <div class="">
         {featuredProjects.map(project => (
           <ProjectCard
             id={project.name}
@@ -120,17 +129,7 @@ const featuredProjects = projects.filter(project => project.featured)
 						github_url={project.github_url}
             className='my-8'/>
         ))}
-        <div
-          class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex items-center justify-center"
-          aria-labelledby="ver-mas"
-        >
-          <a
-            href="/projects"
-            class="text-2xl transition-colors hover:text-blue-400 no-underline"
-            aria-label="Ver más proyectos"
-          >
-            Ver Más...
-          </a>
+        
         </div>
       </div>
     </section>
