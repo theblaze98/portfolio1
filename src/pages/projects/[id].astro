@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-export const prerender = true
+export const prerender = true;
 
 const { project } = Astro.props;
 
@@ -30,7 +30,7 @@ const {
 	technologies,
 	roles,
 	featured,
-	description
+	description,
 } = data;
 
 const { Content } = await render(project);
@@ -42,30 +42,40 @@ const { Content } = await render(project);
 			href="/projects"
 			class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6"
 		>
-			<LeftArrow class="w-4 h-4 mr-2" />
-			<span>Volver al Inicio</span>
+			<div class="text-xl mr-2 text-blue-400 no-underline">
+				<LeftArrow class="w-4 h-4 mr-2" />
+			</div>
+			<span>Volver</span>
 		</a>
 
-		<h1 class="text-4xl md:text-6xl font-bold mb-8 text-center">
+		<h1 class="text-4xl md:text-6xl font-bold mt-5 mb-8 text-center">
 			{name}
 		</h1>
 
 		{
 			image && (
-				<div transition:name={`image-${slug}`} class="mb-12 relative rounded-xl overflow-hidden shadow-2xl">
+				<div
+					transition:name={`image-${slug}`}
+					class="mb-12 relative rounded-xl overflow-hidden shadow-2xl"
+				>
 					<Picture
 						src={`/images/${image}`}
 						alt={`Captura de pantalla de ${name}`}
 						width={1200}
 						height={675}
-						class='aspect-video'
+						class="aspect-video"
 						formats={["avif", "webp"]}
 					/>
 					<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 					<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
-						<p transition:name={`title-${slug}`} class="text-2xl font-bold mb-2">{name}</p>
+						<p
+							transition:name={`title-${slug}`}
+							class="text-2xl font-bold mb-2"
+						>
+							{name}
+						</p>
 						<p class="text-lg opacity-75">
-						{description.slice(0, 100) + "..."}
+							{description.slice(0, 100) + "..."}
 						</p>
 					</div>
 				</div>
@@ -112,7 +122,9 @@ const { Content } = await render(project);
 			</section>
 
 			<section class="bg-gray-800 p-6 rounded-lg shadow-lg">
-				<h2 class="text-2xl font-bold mb-4">Detalles del Proyecto</h2>
+				<h2 class="text-2xl md:text-xl font-bold mb-4">
+					Detalles del Proyecto
+				</h2>
 				<ul class="space-y-2">
 					<li class="flex items-center">
 						<div class="text-green-500 text-lg mr-2">
