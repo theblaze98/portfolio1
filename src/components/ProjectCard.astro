@@ -1,18 +1,18 @@
 ---
-import { Picture } from 'astro:assets'
-import Eye from './icons/Eye.astro'
-import ExternalLink from './icons/ExternalLink.astro'
-import Github from './icons/Github.astro'
+import { Picture } from "astro:assets";
+import Eye from "./icons/Eye.astro";
+import ExternalLink from "./icons/ExternalLink.astro";
+import Github from "./icons/Github.astro";
 
 interface Props {
-	id: string
-	name: string
-	description: string
-	technologies: string[]
-	demo_url?: string | null
-	github_url: string
-	image?: string
-	className?: string
+	id: string;
+	name: string;
+	description: string;
+	technologies: string[];
+	demo_url?: string | null;
+	github_url: string;
+	image?: string;
+	className?: string;
 }
 
 const {
@@ -24,57 +24,63 @@ const {
 	image,
 	id,
 	className,
-} = Astro.props
+} = Astro.props;
 ---
 
 <article
-	class={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex flex-col ${className}`}>
+	class={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex flex-col ${className}`}
+>
 	{
 		image && (
-			<div class='w-full p-4'>
-				<div class='relative h-48 md:h-full rounded-lg overflow-hidden'>
+			<div transition:name={`image-${id}`} class="w-full p-4">
+				<div class="relative h-48 md:h-full rounded-lg overflow-hidden">
 					<Picture
 						src={`/images/${image}`}
 						alt={`Proyecto ${name}`}
-						class='rounded-lg object-cover aspect-video w-full'
-						formats={['avif', 'webp']}
+						class="rounded-lg object-cover aspect-video w-full"
+						formats={["avif", "webp"]}
 						width={360}
 						height={360}
 					/>
 					<a
 						href={`/projects/${id}`}
-						class='absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg'>
-						<div class='text-white text-center flex flex-col items-center'>
-							<Eye class='w-8 h-8 mx-auto mb-2' />
-							<span class='text-lg font-semibold'>Ver más</span>
+						class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg"
+					>
+						<div class="text-white text-center flex flex-col items-center">
+							<Eye class="w-8 h-8 mx-auto mb-2" />
+							<span class="text-lg font-semibold">Ver más</span>
 						</div>
 					</a>
 				</div>
 			</div>
 		)
 	}
-	<div class='p-6 w-full'>
+	<div class="p-6 w-full">
 		<h3
-			class='text-xl font-semibold mb-2 hover:text-blue-300 transition-colors duration-300'>
+			class="text-xl font-semibold mb-2 hover:text-blue-300 transition-colors duration-300"
+		>
 			<a href={`/projects/${id}`}>{name}</a>
 		</h3>
-		<p class='text-gray-300 prose prose-invert md:prose-lg mb-4'>
+		<p class="text-gray-300 prose prose-invert md:prose-lg mb-4">
 			{description}
 		</p>
-		<div class='flex flex-wrap gap-2 space-x-2'>
+		<div class="flex flex-wrap gap-2 space-x-2">
 			{
-				technologies.map(tech => (
-					<span class='flex items-center justify-center bg-blue-500 text-white px-3 py-1 my-1  rounded-3xl text-md'>
+				technologies.map((tech) => (
+					<span class="flex items-center justify-center bg-blue-500 text-white px-3 py-1 my-1  rounded-3xl text-md">
 						{tech}
 					</span>
 				))
 			}
 		</div>
 	</div>
-	<div class='px-6 pb-6 pt-2 w-full flex gap-5'>
+	<div class="px-6 pb-6 pt-2 w-full flex gap-5">
 		<a
 			href={github_url}
-			class='flex items-center text-lg gap-4 hover:text-blue-300 transition-colors duration-300'>
+			target="_blank"
+			rel="noopener noreferrer"
+			class="flex items-center text-lg gap-4 hover:text-blue-300 transition-colors duration-300"
+		>
 			<Github />
 			Github
 		</a>
@@ -82,7 +88,10 @@ const {
 			demo_url && (
 				<a
 					href={demo_url}
-					class='flex items-center text-lg gap-4 hover:text-blue-300 transition-colors duration-300'>
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center text-lg gap-4 hover:text-blue-300 transition-colors duration-300"
+				>
 					<ExternalLink />
 					Demo
 				</a>
