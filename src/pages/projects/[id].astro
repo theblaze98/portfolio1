@@ -16,6 +16,8 @@ export async function getStaticPaths() {
 	}));
 }
 
+export const prerender = true
+
 const { project } = Astro.props;
 
 const { data, slug } = project;
