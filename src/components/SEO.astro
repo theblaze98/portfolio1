@@ -1,45 +1,67 @@
 ---
 interface Props {
-	title: string
+	title?: string
+    description?: string
+    icon?: string
+    iconType?: string
+    iconSize?: string
+    image?: string
+    keywords?: string
+    author?: string
+    robots?: string
+    themeColor?: string
+    url?: string
+    siteName?: string
 }
 
-const { title } = Astro.props
+const { 
+    title,
+    description,
+    icon,
+    iconType,
+    iconSize,
+    image,
+    keywords,
+    author,
+    robots,
+    themeColor,
+    url,
+    siteName
+ } = Astro.props
 ---
-<meta name="google-site-verification" content="d0-XGSNNymxfxwKjS7wMIzqu_OUWHujjJZ9YVPM2_YY" />
 
 <meta
     name="description"
-    content="Dionicio Vargas es un desarrollador web dedicado con más de un año de experiencia, especializado en crear soluciones web innovadoras, rápidas y eficientes que mejoran la experiencia del usuario."
+    content={description}
 />
 <meta
     name="keywords"
-    content="Dionicio Vargas, Dionicio, Vargas, programador, desarrollador web, desarrollo web, soluciones web, programación, portfolio, desarrollador full-stack"
+    content={keywords}
 />
-<meta name="author" content="Dionicio Vargas" />
-<meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#1E40AF" />
+<meta name="author" content={author} />
+<meta name="robots" content={robots} />
+<meta name="theme-color" content={themeColor} />
 
-<link rel="icon" href="/favicon.jpeg" sizes="32x32" type="image/jpeg" />
+<link rel="icon" href="https://dionicio.vercel.app/favicon.jpeg" sizes="32x32" type="image/jpeg" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta
     property="og:description"
-    content="Dionicio Vargas es un desarrollador web dedicado con más de un año de experiencia, especializado en crear soluciones web innovadoras, rápidas y eficientes que mejoran la experiencia del usuario."
+    content={description}
 />
-<meta property="og:image" content="https://dionicio.vercel.app/image.webp" />
-<meta property="og:image:width" content="854" />
-<meta property="og:image:height" content="480" />
-<meta property="og:url" content="https://dionicio.vercel.app" />
-<meta property="og:site_name" content="Dionicio Vargas - Desarrollador Web" />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content={siteName} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta
     name="twitter:description"
-    content="Dionicio Vargas es un desarrollador web dedicado con más de un año de experiencia, especializado en crear soluciones web innovadoras, rápidas y eficientes que mejoran la experiencia del usuario."
+    content={description}
 />
-<meta name="twitter:image" content="https://dionicio.vercel.app/image.webp" />
-<meta name="twitter:url" content="https://dionicio.vercel.app" />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:url" content={url} />
+<meta name="twitter:site" content={siteName}>
