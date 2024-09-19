@@ -1,9 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 import SEO from "../components/SEO.astro";
 import Github from "../components/icons/Github.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
-import Phone from "../components/icons/Phone.astro";
 import Mail from "../components/icons/Mail.astro";
 import MapPin from "../components/icons/MapPin.astro";
 
@@ -24,6 +24,7 @@ const { title } = Astro.props;
 		<SEO title={title} />
 
 		<ViewTransitions />
+		<SpeedInsights />
 	</head>
 	<body
 		class="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 text-white"
