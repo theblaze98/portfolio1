@@ -1,8 +1,11 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import projects from '../data/projects.json'
+import LeftArrow from '../components/icons/LeftArrow.astro'
+
+const projects = await getCollection('projects')
+
 ---
 
 <Layout title='Proyectos de Dionicio Vargas - Portafolio'>
@@ -12,27 +15,30 @@ import projects from '../data/projects.json'
 				href='/'
 				class='text-xl hover:text-blue-400 transition-colors flex gap-2 items-center no-underline'
 				aria-label='Volver al Inicio'>
-				<Icon
-					name='mdi:arrow-left-circle'
-					class='w-8 h-8'
-				/>
+				<LeftArrow class='w-8 h-8'/>
 				<span>Volver al Inicio</span>
 			</a>
 			<h1 class='text-2xl font-bold'>Mis Proyectos</h1>
 		</nav>
 	</header>
-	<main class='mx-auto max-w-4xl w-11/12 mt-12'>
-		<section class='grid gap-8 md:grid-cols-2 w-full'>
+	<main class='mx-auto max-w-5xl w-11/12 mt-12 min-h-screen'>
+		<section class='columns-1 md:columns-2 w-full'>
 			{
-				projects.map(project => (
-					<ProjectCard
-						name={project.name}
-						description={project.description}
-						technologies={project.technologies}
-						demo_url={project.demo_url}
-						github_url={project.github_url}
-						class="prose prose-invert"/>
-				))
+				projects.map(project => {
+					const { data, slug } = project
+					const { name, description, technologies, demo_url, github_url, image } = data
+
+					return (
+						<ProjectCard
+						name={name}
+						description={description}
+						technologies={technologies}
+						demo_url={demo_url}
+						github_url={github_url}
+						image={image}
+						id={slug}/>
+					)
+				})
 			}
 		</section>
 	</main>

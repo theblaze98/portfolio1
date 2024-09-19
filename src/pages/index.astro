@@ -6,15 +6,16 @@ import ProjectCard from '../components/ProjectCard.astro'
 import Github from '../components/icons/Github.astro'
 import LinkedIn from '../components/icons/LinkedIn.astro'
 import Mail from '../components/icons/Mail.astro'
-import Avatar from '../assets/img.jpeg'
+import Avatar from '../assets/img.webp'
 import technologies from '../data/technologies.json'
 import projects from '../data/projects.json'
 
 const featuredProjects = projects.filter(project => project.featured)
+
 ---
 
 <Layout title="Portafolio de Dionicio Vargas - Desarrollador Web">
-  <main class="max-w-4xl w-11/12 mx-auto">
+  <main class="max-w-5xl w-11/12 mx-auto">
     <header class="flex flex-col md:flex-row mt-12 items-center justify-between">
       <div class="w-full space-y-4">
         <h1 class="text-5xl font-bold">
@@ -108,15 +109,16 @@ const featuredProjects = projects.filter(project => project.featured)
 
     <section class="mt-16" aria-labelledby="proyectos-destacados">
       <h2 id="proyectos-destacados" class="text-3xl font-bold mb-4">Proyectos Destacados</h2>
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="columns-1 md:columns-2 gap-8">
         {featuredProjects.map(project => (
           <ProjectCard
+            id={project.name}
 						name={project.name}
 						description={project.description}
 						technologies={project.technologies}
 						demo_url={project.demo_url}
 						github_url={project.github_url}
-            class="prose prose-invert" />
+            className='my-8'/>
         ))}
         <div
           class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800 flex items-center justify-center"
