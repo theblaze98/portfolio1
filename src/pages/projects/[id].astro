@@ -1,26 +1,26 @@
 ---
-import { getCollection, render } from "astro:content";
-import { Picture } from "astro:assets";
-import Layout from "../../layouts/Layout.astro";
-import LeftArrow from "../../components/icons/LeftArrow.astro";
-import Github from "../../components/icons/Github.astro";
-import ExternalLink from "../../components/icons/ExternalLink.astro";
-import CheckCircle from "../../components/icons/CheckCircle.astro";
+import { getCollection, render } from 'astro:content'
+import { Picture } from 'astro:assets'
+import Layout from '../../layouts/Layout.astro'
+import LeftArrow from '../../components/icons/LeftArrow.astro'
+import Github from '../../components/icons/Github.astro'
+import ExternalLink from '../../components/icons/ExternalLink.astro'
+import CheckCircle from '../../components/icons/CheckCircle.astro'
 
 export async function getStaticPaths() {
-	const projects = await getCollection("projects");
+	const projects = await getCollection('projects')
 
-	return projects.map((project) => ({
+	return projects.map(project => ({
 		params: { id: project.slug },
 		props: { project },
-	}));
+	}))
 }
 
-export const prerender = true;
+export const prerender = true
 
-const { project } = Astro.props;
+const { project } = Astro.props
 
-const { data, slug } = project;
+const { data, slug } = project
 const {
 	name,
 	image,
@@ -31,24 +31,23 @@ const {
 	roles,
 	featured,
 	description,
-} = data;
+} = data
 
-const { Content } = await render(project);
+const { Content } = await render(project)
 ---
 
 <Layout title={`Proyecto: ${name}`}>
-	<main class="mx-auto px-4 py-8 max-w-4xl w-11/12">
+	<main class='mx-auto px-4 py-8 max-w-4xl w-11/12'>
 		<a
-			href="/projects"
-			class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6"
-		>
-			<div class="text-xl mr-2 text-blue-400 no-underline">
-				<LeftArrow class="w-4 h-4 mr-2" />
+			href='/projects'
+			class='inline-flex items-center text-blue-400 hover:text-blue-300 mb-6'>
+			<div class='text-xl mr-2 text-blue-400 no-underline'>
+				<LeftArrow class='w-4 h-4 mr-2' />
 			</div>
 			<span>Volver</span>
 		</a>
 
-		<h1 class="text-4xl md:text-6xl font-bold mt-5 mb-8 text-center">
+		<h1 class='text-4xl md:text-6xl font-bold mt-5 mb-8 text-center'>
 			{name}
 		</h1>
 
@@ -56,64 +55,62 @@ const { Content } = await render(project);
 			image && (
 				<div
 					transition:name={`image-${slug}`}
-					class="mb-12 relative rounded-xl overflow-hidden shadow-2xl"
-				>
+					class='mb-12 relative rounded-xl overflow-hidden shadow-2xl'>
 					<Picture
 						src={`/images/${image}`}
 						alt={`Captura de pantalla de ${name}`}
 						width={1200}
 						height={675}
-						class="aspect-video"
-						formats={["avif", "webp"]}
+						class='aspect-video'
+						formats={['avif', 'webp']}
 					/>
-					<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-					<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
+					<div class='hidden md:block absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent' />
+					<div class='hidden md:block absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent'>
 						<p
 							transition:name={`title-${slug}`}
-							class="text-2xl font-bold mb-2"
-						>
+							class='text-2xl font-bold mb-2'>
 							{name}
 						</p>
-						<p class="text-lg opacity-75">
-							{description.slice(0, 100) + "..."}
+						<p class='text-lg opacity-75'>
+							{description.slice(0, 100) + '...'}
 						</p>
 					</div>
 				</div>
 			)
 		}
 
-		<div class="grid md:grid-cols-3 gap-8 mb-12">
-			<section class="md:col-span-2">
-				<h2 class="text-3xl font-bold mb-4">Descripción</h2>
-				<Content />
-				<div class="flex flex-wrap gap-2 mb-4">
+		<div class='grid md:grid-cols-3 gap-8 mb-12'>
+			<section class='md:col-span-2'>
+				<h2 class='text-3xl font-bold mb-4'>Descripción</h2>
+				<div class='prose prose-invert md:prose-lg'>
+					<Content />
+				</div>
+				<div class='flex flex-wrap gap-2 mb-4'>
 					{
-						technologies.map((tech) => (
-							<span class="bg-blue-900 text-white text-sm px-3 py-1 rounded-full">
+						technologies.map(tech => (
+							<span class='bg-blue-900 text-white text-sm px-3 py-1 rounded-full'>
 								{tech}
 							</span>
 						))
 					}
 				</div>
-				<div class="flex space-x-4">
+				<div class='flex space-x-4'>
 					<a
 						href={github_url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-					>
-						<div class="mr-2">
+						target='_blank'
+						rel='noopener noreferrer'
+						class='inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300'>
+						<div class='mr-2'>
 							<Github />
 						</div>
 						<span>Ver en GitHub</span>
 					</a>
 					<a
 						href={demo_url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-					>
-						<div class="mr-2">
+						target='_blank'
+						rel='noopener noreferrer'
+						class='inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300'>
+						<div class='mr-2'>
 							<ExternalLink />
 						</div>
 						<span>Ver Demo</span>
@@ -121,27 +118,27 @@ const { Content } = await render(project);
 				</div>
 			</section>
 
-			<section class="bg-gray-800 p-6 rounded-lg shadow-lg">
-				<h2 class="text-2xl md:text-xl font-bold mb-4">
+			<section class='bg-gray-800 p-6 rounded-lg shadow-lg'>
+				<h2 class='text-2xl md:text-xl font-bold mb-4'>
 					Detalles del Proyecto
 				</h2>
-				<ul class="space-y-2">
-					<li class="flex items-center">
-						<div class="text-green-500 text-lg mr-2">
-							<CheckCircle class="stroke-green-500" />
+				<ul class='space-y-2'>
+					<li class='flex items-center'>
+						<div class='text-green-500 text-lg mr-2'>
+							<CheckCircle class='stroke-green-500' />
 						</div>
-						<span class="font-semibold mr-2">Estado:</span>
-						<span class="capitalize">{status}</span>
+						<span class='font-semibold mr-2'>Estado:</span>
+						<span class='capitalize'>{status}</span>
 					</li>
 					<li>
-						<span class="font-semibold">Roles:</span>
-						<ul class="list-disc list-inside ml-5">
+						<span class='font-semibold'>Roles:</span>
+						<ul class='list-disc list-inside ml-5'>
 							{roles.map((role, index) => <li>{role}</li>)}
 						</ul>
 					</li>
 					<li>
-						<span class="font-semibold mr-2">Destacado:</span>
-						<span>{featured ? "Sí" : "No"}</span>
+						<span class='font-semibold mr-2'>Destacado:</span>
+						<span>{featured ? 'Sí' : 'No'}</span>
 					</li>
 				</ul>
 			</section>
