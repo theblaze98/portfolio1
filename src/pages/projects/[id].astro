@@ -6,6 +6,8 @@ import LeftArrow from '../../components/icons/LeftArrow.astro'
 import Github from '../../components/icons/Github.astro'
 import ExternalLink from '../../components/icons/ExternalLink.astro'
 import CheckCircle from '../../components/icons/CheckCircle.astro'
+import User from '../../components/icons/User.astro'
+import Star from '../../components/icons/Star.astro'
 
 export async function getStaticPaths() {
 	const projects = await getCollection('projects')
@@ -47,101 +49,93 @@ const { Content } = await render(project)
 			<span>Volver</span>
 		</a>
 
-		<h1 class='text-4xl md:text-6xl font-bold mt-5 mb-8 text-center'>
-			{name}
-		</h1>
-
-		{
-			image && (
-				<div
-					transition:name={`image-${slug}`}
-					class='mb-12 relative rounded-xl overflow-hidden shadow-2xl'>
-					<Picture
-						src={`/images/${image}`}
-						alt={`Captura de pantalla de ${name}`}
-						width={1200}
-						height={675}
-						class='aspect-video'
-						formats={['avif', 'webp']}
-					/>
-					<div class='hidden md:block absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent' />
-					<div class='hidden md:block absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent'>
-						<p
-							transition:name={`title-${slug}`}
-							class='text-2xl font-bold mb-2'>
-							{name}
-						</p>
-						<p class='text-lg opacity-75'>
-							{description.slice(0, 100) + '...'}
-						</p>
+		<article
+			class='bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl'>
+			<header
+				class='p-6 border-b border-gray-700 prose prose-invert md:prose-lg'>
+				<h1 class='text-3xl font-bold text-white mb-2'>{name}</h1>
+				<p class='text-gray-300'>{description}</p>
+			</header>
+			<div class='p-6'>
+				<section class='mb-6 prose prose-invert md:prose-lg'>
+					<h2 class='text-xl font-semibold mb-2 text-white'>
+						Tecnologías utilizadas:
+					</h2>
+					<div class='flex flex-wrap gap-2'>
+						{
+							technologies.map(tech => (
+								<span class='px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full'>
+									{tech}
+								</span>
+							))
+						}
 					</div>
-				</div>
-			)
-		}
+				</section>
 
-		<div class='grid md:grid-cols-3 gap-8 mb-12'>
-			<section class='md:col-span-2'>
-				<h2 class='text-3xl font-bold mb-4'>Descripción</h2>
-				<div class='prose prose-invert md:prose-lg'>
+				<section class='mb-6 prose prose-invert md:prose-lg'>
+					<h2 class='text-xl font-semibold mb-2 text-white'>
+						Detalles del proyecto:
+					</h2>
+					<div class='grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300'>
+						<div class='flex items-center'>
+							<span>Estado: {status}</span>
+						</div>
+						<div class='flex items-center'>
+							<span>Roles: {roles.join(', ')}</span>
+						</div>
+					</div>
+				</section>
+
+				{
+					image && (
+						<section class='mt-8'>
+							<div
+								transition:name={`image-${slug}`}
+								class='relative h-64 md:h-96 rounded-lg overflow-hidden'>
+								<Picture
+									src={`/images/${image}`}
+									alt={`Vista previa de ${name}`}
+									width={1200}
+									height={675}
+									class='aspect-video'
+									formats={['avif', 'webp']}
+								/>
+							</div>
+						</section>
+					)
+				}
+
+				<section class='mt-8 prose prose-invert md:prose-lg'>
 					<Content />
-				</div>
-				<div class='flex flex-wrap gap-2 mb-4'>
-					{
-						technologies.map(tech => (
-							<span class='bg-blue-900 text-white text-sm px-3 py-1 rounded-full'>
-								{tech}
-							</span>
-						))
-					}
-				</div>
-				<div class='flex space-x-4'>
-					<a
-						href={github_url}
-						target='_blank'
-						rel='noopener noreferrer'
-						class='inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300'>
-						<div class='mr-2'>
-							<Github />
-						</div>
-						<span>Ver en GitHub</span>
-					</a>
-					<a
-						href={demo_url}
-						target='_blank'
-						rel='noopener noreferrer'
-						class='inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300'>
-						<div class='mr-2'>
-							<ExternalLink />
-						</div>
-						<span>Ver Demo</span>
-					</a>
-				</div>
-			</section>
-
-			<section class='bg-gray-800 p-6 rounded-lg shadow-lg'>
-				<h2 class='text-2xl md:text-xl font-bold mb-4'>
-					Detalles del Proyecto
-				</h2>
-				<ul class='space-y-2'>
-					<li class='flex items-center'>
-						<div class='text-green-500 text-lg mr-2'>
-							<CheckCircle class='stroke-green-500' />
-						</div>
-						<span class='font-semibold mr-2'>Estado:</span>
-						<span class='capitalize'>{status}</span>
-					</li>
-					<li>
-						<span class='font-semibold'>Roles:</span>
-						<ul class='list-disc list-inside ml-5'>
-							{roles.map((role, index) => <li>{role}</li>)}
-						</ul>
-					</li>
-					<li>
-						<span class='font-semibold mr-2'>Destacado:</span>
-						<span>{featured ? 'Sí' : 'No'}</span>
-					</li>
-				</ul>
-			</section>
-		</div>
+				</section>
+			</div>
+			<footer
+				class='px-6 py-4 bg-gray-700 flex flex-col sm:flex-row justify-end items-center gap-4'>
+				<a
+					href={github_url}
+					target='_blank'
+					rel='noopener noreferrer'
+					class='inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300'>
+					<div class='mr-2'>
+						<Github />
+					</div>
+					<span>Ver en GitHub</span>
+				</a>
+				{
+					demo_url && (
+						<a
+							href={demo_url}
+							target='_blank'
+							rel='noopener noreferrer'
+							class='inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300'>
+							<div class='mr-2'>
+								<ExternalLink />
+							</div>
+							<span>Ver Demo</span>
+						</a>
+					)
+				}
+			</footer>
+		</article>
 	</main>
 </Layout>

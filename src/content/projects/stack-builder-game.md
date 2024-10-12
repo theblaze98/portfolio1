@@ -9,4 +9,3 @@ status: terminado
 roles: [Desarrollador, Diseñador de UI]
 featured: false
 ---
-Un juego hecho para practicar mi logica de programacion
