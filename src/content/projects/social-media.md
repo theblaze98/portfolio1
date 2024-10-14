@@ -8,7 +8,7 @@ roles: [Desarrollador, Diseñador UI]
 featured: true
 ---
 
-# **Características:**
+## Características:
 - **Conexiones Sociales:** Los usuarios pueden crear perfiles, seguir a otros, y mantenerse al día con las actualizaciones y publicaciones de sus amigos y comunidades.
 - **Compartición de Contenido:** Permite a los usuarios compartir texto, imágenes y videos, así como comentar y reaccionar a las publicaciones de otros.
 - **Interfaz Atractiva:** Utiliza TailwindCSS para diseñar una interfaz moderna y responsiva, optimizando la experiencia del usuario en todos los dispositivos.
