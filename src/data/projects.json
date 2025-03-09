@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Task App Rust",
+    "description": "Aplicación de tareas en consola hecha en rust",
+    "technologies": ["Rust"],
+    "url": "https://github.com/theblaze98/taskapp-rust",
+    "created_at": "febrero de 2025"
+  },
+  {
+    "name": "App Router Next with React Router DOM",
+    "description": "Un enrutador dinámico construido con React Router DOM en React.",
+    "technologies": ["TypeScript", "React"],
+    "url": "https://github.com/theblaze98/app-router-next-with-react-router-dom",
+    "created_at": "febrero de 2025"
+  },
+  {
+    "name": "Arkhive Backend",
+    "description": "Backend para una aplicación de gestion de finanazas",
+    "technologies": ["TypeScript", "NestJS", "PostgreSQL"],
+    "url": "https://github.com/theblaze98/arkhive-backend",
+    "created_at": "enero de 2025"
+  },
+  {
+    "name": "Blog",
+    "description": "Una applicaion donde los usuarios pueden crear posts tipo blog",
+    "technologies": ["TypeScript", "NestJS", "Next.js", "PostgreSQL"],
+    "url": "https://github.com/theblaze98/blog",
+    "deployed_at": "https://blog-pi-one-22.vercel.app",
+    "created_at": "marzo de 2024"
+  },
+  {
+    "name": "Nakano Nino Bot TypeScript",
+    "description": "Un bot de discord, reescrito en TypeScript.",
+    "technologies": ["TypeScript", "Discord.js"],
+    "url": "https://github.com/theblaze98/nakano-nino-bot-typescript",
+    "created_at": "noviembre de 2023"
+  },
+  {
+    "name": "Create CPP Projects",
+    "description": "Una herramienta para crear proyectos en C++ orientados a vscode",
+    "technologies": ["Rust"],
+    "url": "https://github.com/theblaze98/create-cpp-projects",
+    "created_at": "noviembre de 2023"
+  },
+  {
+    "name": "Notes App Backend",
+    "description": "Backend para una aplicación de notas.",
+    "technologies": ["JavaScript", "Express", "MongoDB"],
+    "url": "https://github.com/theblaze98/notes-app-backend",
+    "deployed_at": "https://notes-app-backend-blue.vercel.app",
+    "created_at": "abril de 2023"
+  },
+  {
+    "name": "Notes App Frontend",
+    "description": "Frontend para una aplicación de notas.",
+    "technologies": ["JavaScript", "React"],
+    "url": "https://github.com/theblaze98/notes-app-frontend",
+    "deployed_at": "https://notes-app-frontend-sand.vercel.app",
+    "created_at": "abril de 2023"
+  },
+  {
+    "name": "Bot Nino Nakano",
+    "description": "Un bot relacionado con el anime, Discord",
+    "technologies": ["JavaScript", "Discord.js"],
+    "url": "https://github.com/theblaze98/bot-nino-nakano",
+    "deployed_at": "https://bot-nino-nakano.vercel.app",
+    "created_at": "febrero de 2023"
+  },
+  {
+    "name": "Password Generator",
+    "description": "Un generador de contraseñas",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "url": "https://github.com/theblaze98/password-generator",
+    "created_at": "octubre de 2022"
+  },
+  {
+    "name": "Cronometro",
+    "description": "Un cronómetro web simple.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "url": "https://github.com/theblaze98/cronometro",
+    "created_at": "septiembre de 2022"
+  },
+  {
+    "name": "Calculadora Web",
+    "description": "Una calculadora web interactiva.",
+    "technologies": ["HTML", "Sass", "JavaScript"],
+    "url": "https://github.com/theblaze98/calculadora-web",
+    "created_at": "junio de 2022"
+  }
+]
