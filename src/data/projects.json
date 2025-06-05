@@ -1,5 +1,13 @@
 [
   {
+    "name": "Quotes Spark",
+    "description": "Una web donde puedes ver y buscar citas.",
+    "technologies": ["TypeScript", "React"],
+    "url": "https://github.com/theblaze98/quotes-spark",
+    "deployed_at": "https://quotes-spark.vercel.app",
+    "created_at": "junio de 2025"
+  },
+  {
     "name": "Task App Rust",
     "description": "Aplicación de tareas en consola hecha en rust",
     "technologies": ["Rust"],
@@ -12,21 +20,6 @@
     "technologies": ["TypeScript", "React"],
     "url": "https://github.com/theblaze98/app-router-next-with-react-router-dom",
     "created_at": "febrero de 2025"
-  },
-  {
-    "name": "Arkhive Backend",
-    "description": "Backend para una aplicación de gestion de finanazas",
-    "technologies": ["TypeScript", "NestJS", "PostgreSQL"],
-    "url": "https://github.com/theblaze98/arkhive-backend",
-    "created_at": "enero de 2025"
-  },
-  {
-    "name": "Blog",
-    "description": "Una applicaion donde los usuarios pueden crear posts tipo blog",
-    "technologies": ["TypeScript", "NestJS", "Next.js", "PostgreSQL"],
-    "url": "https://github.com/theblaze98/blog",
-    "deployed_at": "https://blog-pi-one-22.vercel.app",
-    "created_at": "marzo de 2024"
   },
   {
     "name": "Nakano Nino Bot TypeScript",

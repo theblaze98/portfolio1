@@ -29,17 +29,17 @@ export default function Projects() {
     <div className="space-y-8">
       <h2 className="text-2xl font-bold text-center mb-6">Mis Proyectos</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="columns-1 md:columns-2 gap-4">
         {currentProjects.map((project, index) => (
           <div
             key={index}
-            className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-md"
+            className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-md mb-4"
           >
             <div className="p-0">
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white">{project.name}</h3>
+              <div className="px-6 py-3">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white">{project.name}</h3>
               </div>
-              <div className="p-6">
+              <div className="px-6 py-3">
                 <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
