@@ -1,112 +1,133 @@
-"use client"
+import { motion } from "framer-motion"
+import { ExternalLink, GithubIcon } from "lucide-react"
+import projects from "../data/projects.json"
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react"
-import projectsData from "../data/projects.json"
+const projectDecorations: Record<string, string> = {
+  inventory: "bg-gradient-to-br from-emerald-500/10 to-emerald-500/5",
+  social: "bg-gradient-to-br from-blue-500/10 to-blue-500/5",
+  finance: "bg-gradient-to-br from-violet-500/10 to-violet-500/5",
+}
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+}
 
 export default function Projects() {
-  const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 6
-
-  // Calcular proyectos para la página actual
-  const indexOfLastProject = currentPage * projectsPerPage
-  const indexOfFirstProject = indexOfLastProject - projectsPerPage
-  const currentProjects = projectsData.slice(indexOfFirstProject, indexOfLastProject)
-
-  // Calcular total de páginas
-  const totalPages = Math.ceil(projectsData.length / projectsPerPage)
-
-  // Funciones para navegar entre páginas
-  const goToNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-  }
-
-  const goToPreviousPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1))
-  }
-
   return (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Mis Proyectos</h2>
+    <section id="projects" className="py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold text-github-text mb-3">Proyectos Destacados</h2>
+          <p className="text-github-text-secondary max-w-lg mx-auto">
+            Aplicaciones reales que he construido desde cero
+          </p>
+        </motion.div>
 
-      <div className="columns-1 md:columns-2 gap-4">
-        {currentProjects.map((project, index) => (
-          <div
-            key={index}
-            className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-md mb-4"
-          >
-            <div className="p-0">
-              <div className="px-6 py-3">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white">{project.name}</h3>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+        >
+          {projects.map((project) => (
+            <motion.article
+              key={project.id}
+              variants={cardVariants}
+              className="group relative rounded-xl border border-github-border bg-github-surface overflow-hidden hover:border-github-border-hover transition-all duration-300"
+            >
+              <div className={`h-48 ${projectDecorations[project.id]} relative overflow-hidden`}>
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(48,54,61,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(48,54,61,0.2)_1px,transparent_1px)] bg-[length:24px_24px]" />
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-github-red" />
+                  <div className="w-3 h-3 rounded-full bg-github-orange" />
+                  <div className="w-3 h-3 rounded-full bg-github-green" />
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="font-mono text-xs text-github-text-secondary/60 space-y-1">
+                    <div className="flex gap-2">
+                      <span className="text-github-blue">import</span>
+                      <span>{'{'}</span>
+                      <span className="text-github-orange">{project.id}</span>
+                      <span>{'}'}</span>
+                      <span className="text-github-blue">from</span>
+                      <span className="text-github-green">'@projects/{project.id}'</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="px-6 py-3">
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
+
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-github-text mb-2 group-hover:text-github-blue transition-colors">
+                  {project.name}
+                </h3>
+
+                <p className="text-sm text-github-text-secondary leading-relaxed mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {project.technologies.map((tech) => (
                     <span
-                      key={techIndex}
-                      className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                      key={tech}
+                      className="px-2 py-0.5 text-[11px] font-mono rounded bg-github-bg border border-github-border text-github-text-tertiary"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{project.created_at}</span>
-                  <div className="flex gap-2">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+
+                <ul className="space-y-1.5 mb-5">
+                  {project.features.slice(0, 3).map((feature) => (
+                    <li
+                      key={feature}
+                      className="text-xs text-github-text-secondary flex items-start gap-2"
                     >
-                      <Github className="h-4 w-4 mr-1" />
-                      Código
-                    </a>
-                    {project.deployed_at && (
-                      <a
-                        href={project.deployed_at}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-green-600 dark:text-green-400 hover:underline ml-3"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-1" />
-                        Demo
-                      </a>
-                    )}
-                  </div>
+                      <span className="text-github-blue mt-0.5">&gt;</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center gap-3 pt-3 border-t border-github-border">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-github-text-secondary hover:text-github-text transition-colors"
+                  >
+                    <GithubIcon className="h-3.5 w-3.5" />
+                    Código
+                  </a>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-github-blue hover:text-blue-400 transition-colors"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    Demo en vivo
+                  </a>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </motion.article>
+          ))}
+        </motion.div>
       </div>
-
-      {/* Paginación */}
-      <div className="flex justify-center items-center gap-2 mt-8">
-        <button
-          onClick={goToPreviousPage}
-          disabled={currentPage === 1}
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 p-0"
-          aria-label="Página anterior"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-
-        <span className="text-sm">
-          Página {currentPage} de {totalPages}
-        </span>
-
-        <button
-          onClick={goToNextPage}
-          disabled={currentPage === totalPages}
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 p-0"
-          aria-label="Página siguiente"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
-      </div>
-    </div>
+    </section>
   )
 }
-
