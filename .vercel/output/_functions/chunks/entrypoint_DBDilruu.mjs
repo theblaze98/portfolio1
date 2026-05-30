@@ -3565,7 +3565,10 @@ const ASTRO_PATH_PARAM = "x_astro_path";
 const ASTRO_LOCALS_HEADER = "x-astro-locals";
 const ASTRO_MIDDLEWARE_SECRET_HEADER = "x-astro-middleware-secret";
 
-const createExports = (manifest, { middlewareSecret, skewProtection }) => {
+const createExports = (manifest, {
+  middlewareSecret,
+  skewProtection
+}) => {
   const app = new NodeApp(manifest);
   const handler = async (req, res) => {
     const url = new URL(`https://example.com${req.url}`);
@@ -3589,10 +3592,16 @@ const createExports = (manifest, { middlewareSecret, skewProtection }) => {
     if (skewProtection && process.env.VERCEL_SKEW_PROTECTION_ENABLED === "1") {
       req.headers["x-deployment-id"] = process.env.VERCEL_DEPLOYMENT_ID;
     }
-    const webResponse = await app.render(req, { addCookieHeader: true, clientAddress, locals });
+    const webResponse = await app.render(req, {
+      addCookieHeader: true,
+      clientAddress,
+      locals
+    });
     await NodeApp.writeResponse(webResponse, res);
   };
-  return { default: handler };
+  return {
+    default: handler
+  };
 };
 function start() {
 }

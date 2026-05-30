@@ -3,7 +3,7 @@ import { c as createComponent, b as createAstro, e as addAttribute, r as renderT
 import 'kleur/colors';
 import 'clsx';
 import { jsxs, jsx } from 'react/jsx-runtime';
-import { X, Menu, ArrowRight, GithubIcon, LinkedinIcon, Mail, ChevronDown, ExternalLink, Briefcase, Code, Database, Cloud, Code2, Layers, Cpu, Zap, ArrowUpRight, Download } from 'lucide-react';
+import { X, Menu, ArrowRight, GithubIcon, LinkedinIcon, Mail, ChevronDown, ExternalLink, Briefcase, Code2, Layers, Cpu, Zap, ArrowUpRight, Download } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 export { renderers } from '../renderers.mjs';
@@ -103,7 +103,7 @@ function Header() {
   ] });
 }
 
-const Avatar = new Proxy({"src":"/_astro/img.DpCPHjrK.webp","width":624,"height":624,"format":"webp"}, {
+const Avatar = new Proxy({"src":"/_astro/img.DAjffwNs.webp","width":400,"height":400,"format":"webp"}, {
 						get(target, name, receiver) {
 							if (name === 'clone') {
 								return structuredClone(target);
@@ -390,76 +390,211 @@ function TechStack() {
 
 const projects = [
 	{
-		id: "inventory",
-		name: "Sistema de Gestión de Inventario",
-		description: "Solución full-stack para gestión de inventario con seguimiento en tiempo real, soporte multi-almacén y control de acceso basado en roles. Diseñado para optimizar operaciones de pequeñas y medianas empresas.",
-		longDescription: "Plataforma integral de gestión de inventario con seguimiento en tiempo real a través de múltiples almacenes, alertas automáticas de stock bajo, gestión de órdenes de compra y paneles de análisis detallados. Implementa control de acceso basado en roles para administradores, gerentes y personal.",
+		id: "quotes-spark",
+		name: "Quotes Spark",
+		description: "Aplicación web para explorar y buscar citas inspiradoras con una interfaz moderna y rápida.",
+		longDescription: "Plataforma web diseñada para descubrir, explorar y buscar citas de diferentes categorías. Construida con React y TypeScript, priorizando rendimiento, simplicidad y una experiencia de usuario limpia.",
 		technologies: [
 			"React",
-			"TypeScript",
-			"Node.js",
-			"Express",
-			"PostgreSQL",
-			"Docker"
+			"TypeScript"
 		],
 		features: [
-			"Seguimiento de stock en tiempo real entre almacenes",
-			"Alertas automáticas de stock bajo por correo",
-			"Panel de control con roles (Admin, Gerente, Staff)",
-			"Flujo de gestión de órdenes de compra",
-			"Exportación de reportes a CSV/PDF"
+			"Búsqueda rápida de citas",
+			"Interfaz moderna y responsiva",
+			"Experiencia de usuario optimizada",
+			"Renderizado rápido y ligero"
 		],
-		github: "https://github.com/theblaze98/inventory-system",
-		demo: "https://inventory-demo.vercel.app",
-		image: "inventory"
+		github: "https://github.com/theblaze98/quotes-spark",
+		demo: "https://quotes-spark.vercel.app",
+		image: "quotes-spark"
 	},
 	{
-		id: "social",
-		name: "Plataforma Social en Tiempo Real",
-		description: "Red social con mensajería instantánea, notificaciones en vivo y feeds de contenido. Comunicación vía WebSocket con arquitectura de microservicios escalable.",
-		longDescription: "Plataforma social moderna que permite interacciones en tiempo real mediante conexiones WebSocket. Incluye chat en vivo, feeds de publicaciones con scroll infinito, notificaciones push y perfiles de usuario con sistema de seguidores. El backend utiliza un patrón de microservicios con colas de mensajes.",
+		id: "task-app-rust",
+		name: "Task App Rust",
+		description: "Aplicación de tareas en consola desarrollada en Rust enfocada en simplicidad y rendimiento.",
+		longDescription: "Aplicación CLI para gestión de tareas desarrollada en Rust, permitiendo crear, listar y administrar tareas desde la terminal. Diseñada para practicar desarrollo de sistemas y programación eficiente.",
 		technologies: [
-			"Next.js",
-			"TypeScript",
-			"NestJS",
-			"MongoDB",
-			"Redis",
-			"Docker"
+			"Rust"
 		],
 		features: [
-			"Mensajería instantánea vía WebSocket",
-			"Notificaciones push en vivo",
-			"Feed de contenido con scroll infinito",
-			"Perfiles de usuario con sistema de seguidores",
-			"Arquitectura escalable de microservicios"
+			"Gestión de tareas desde consola",
+			"Aplicación ligera y rápida",
+			"Interfaz CLI minimalista",
+			"Desarrollada completamente en Rust"
 		],
-		github: "https://github.com/theblaze98/social-platform",
-		demo: "https://social-demo.vercel.app",
-		image: "social"
+		github: "https://github.com/theblaze98/taskapp-rust",
+		image: "task-app-rust"
 	},
 	{
-		id: "finance",
-		name: "App de Gestión Financiera",
-		description: "Aplicación de finanzas personales con categorización de transacciones, planificación de presupuestos y gráficos interactivos. Ayuda a visualizar patrones de gasto y alcanzar metas financieras.",
-		longDescription: "Aplicación de gestión financiera que se conecta a APIs bancarias para importar transacciones automáticamente. Incluye categorización de transacciones con IA, planificación de presupuestos personalizables, seguimiento de metas de ahorro y gráficos interactivos para análisis de gastos.",
+		id: "app-router-next-react-router",
+		name: "App Router Next with React Router DOM",
+		description: "Implementación de un sistema de enrutamiento dinámico inspirado en Next.js usando React Router DOM.",
+		longDescription: "Proyecto experimental enfocado en recrear el comportamiento del App Router de Next.js utilizando React Router DOM dentro de una aplicación React. Diseñado para explorar patrones avanzados de navegación.",
 		technologies: [
-			"Next.js",
-			"TypeScript",
-			"Node.js",
-			"Express",
-			"PostgreSQL",
-			"JWT"
+			"React",
+			"TypeScript"
 		],
 		features: [
-			"Importación automática de transacciones vía Plaid API",
-			"Categorización de transacciones con IA",
-			"Planificación de presupuestos con alertas",
-			"Seguimiento de metas de ahorro",
-			"Gráficos interactivos de análisis de gastos"
+			"Enrutamiento dinámico",
+			"Arquitectura modular",
+			"Simulación del App Router de Next.js",
+			"Construido con React Router DOM"
 		],
-		github: "https://github.com/theblaze98/finance-app",
-		demo: "https://finance-demo.vercel.app",
-		image: "finance"
+		github: "https://github.com/theblaze98/app-router-next-with-react-router-dom",
+		image: "app-router-next-react-router"
+	},
+	{
+		id: "nakano-nino-bot-ts",
+		name: "Nakano Nino Bot TypeScript",
+		description: "Bot de Discord desarrollado con TypeScript para automatización y gestión de comunidad.",
+		longDescription: "Bot de Discord reescrito en TypeScript utilizando Discord.js, incluyendo comandos personalizados, automatización de tareas y herramientas de interacción para comunidades.",
+		technologies: [
+			"TypeScript",
+			"Discord.js"
+		],
+		features: [
+			"Comandos personalizados",
+			"Automatización de tareas",
+			"Integración con Discord.js",
+			"Arquitectura basada en TypeScript"
+		],
+		github: "https://github.com/theblaze98/nakano-nino-bot-typescript",
+		image: "nakano-nino-bot-ts"
+	},
+	{
+		id: "create-cpp-projects",
+		name: "Create CPP Projects",
+		description: "Herramienta CLI para generar rápidamente proyectos de C++ configurados para VSCode.",
+		longDescription: "Aplicación desarrollada en Rust para automatizar la creación de proyectos en C++ listos para trabajar en Visual Studio Code, reduciendo tiempo de configuración manual.",
+		technologies: [
+			"Rust"
+		],
+		features: [
+			"Generación automática de proyectos",
+			"Configuración lista para VSCode",
+			"Automatización de estructura inicial",
+			"CLI rápida y ligera"
+		],
+		github: "https://github.com/theblaze98/create-cpp-projects",
+		image: "create-cpp-projects"
+	},
+	{
+		id: "notes-app-backend",
+		name: "Notes App Backend",
+		description: "Backend para aplicación de notas con API REST y persistencia de datos.",
+		longDescription: "Servidor backend construido con Express y MongoDB para gestionar notas mediante una API REST. Incluye endpoints CRUD y manejo de persistencia de datos.",
+		technologies: [
+			"JavaScript",
+			"Express",
+			"MongoDB"
+		],
+		features: [
+			"API REST para notas",
+			"Operaciones CRUD completas",
+			"Persistencia de datos con MongoDB",
+			"Arquitectura backend modular"
+		],
+		github: "https://github.com/theblaze98/notes-app-backend",
+		demo: "https://notes-app-backend-blue.vercel.app",
+		image: "notes-app-backend"
+	},
+	{
+		id: "notes-app-frontend",
+		name: "Notes App Frontend",
+		description: "Frontend para aplicación de notas con interfaz simple y conectada a API REST.",
+		longDescription: "Aplicación frontend construida en React para gestionar notas, conectándose a un backend mediante API REST para crear, editar y eliminar contenido.",
+		technologies: [
+			"JavaScript",
+			"React"
+		],
+		features: [
+			"Interfaz intuitiva para notas",
+			"Integración con API REST",
+			"Gestión de notas en tiempo real",
+			"Diseño simple y funcional"
+		],
+		github: "https://github.com/theblaze98/notes-app-frontend",
+		demo: "https://notes-app-frontend-sand.vercel.app",
+		image: "notes-app-frontend"
+	},
+	{
+		id: "bot-nino-nakano",
+		name: "Bot Nino Nakano",
+		description: "Bot de Discord orientado a entretenimiento y automatización de comunidad.",
+		longDescription: "Bot de Discord desarrollado con JavaScript y Discord.js, enfocado en automatización, entretenimiento e interacción dentro de servidores relacionados con anime y comunidad.",
+		technologies: [
+			"JavaScript",
+			"Discord.js"
+		],
+		features: [
+			"Comandos personalizados",
+			"Automatización de servidor",
+			"Integración con Discord",
+			"Funciones orientadas a comunidad"
+		],
+		github: "https://github.com/theblaze98/bot-nino-nakano",
+		demo: "https://bot-nino-nakano.vercel.app",
+		image: "bot-nino-nakano"
+	},
+	{
+		id: "password-generator",
+		name: "Password Generator",
+		description: "Aplicación web para generar contraseñas seguras de forma rápida.",
+		longDescription: "Herramienta web enfocada en la generación de contraseñas seguras y personalizables, desarrollada utilizando tecnologías web base.",
+		technologies: [
+			"HTML",
+			"CSS",
+			"JavaScript"
+		],
+		features: [
+			"Generación rápida de contraseñas",
+			"Interfaz simple y clara",
+			"Aplicación ligera",
+			"Desarrollada con JavaScript puro"
+		],
+		github: "https://github.com/theblaze98/password-generator",
+		demo: "https://theblaze98.github.io/password-generator",
+		image: "password-generator"
+	},
+	{
+		id: "cronometro",
+		name: "Cronómetro Web",
+		description: "Cronómetro web simple y funcional desarrollado con JavaScript.",
+		longDescription: "Aplicación web minimalista para medir tiempo mediante un cronómetro interactivo, construida con tecnologías web básicas.",
+		technologies: [
+			"HTML",
+			"CSS",
+			"JavaScript"
+		],
+		features: [
+			"Inicio, pausa y reinicio",
+			"Interfaz minimalista",
+			"Rendimiento ligero",
+			"JavaScript vanilla"
+		],
+		github: "https://github.com/theblaze98/cronometro",
+		demo: "https://theblaze98.github.io/cronometro",
+		image: "cronometro"
+	},
+	{
+		id: "calculadora-web",
+		name: "Calculadora Web",
+		description: "Calculadora interactiva desarrollada para operaciones matemáticas básicas.",
+		longDescription: "Aplicación web de calculadora construida utilizando JavaScript, HTML y Sass, enfocada en diseño interactivo y experiencia de usuario.",
+		technologies: [
+			"HTML",
+			"Sass",
+			"JavaScript"
+		],
+		features: [
+			"Operaciones matemáticas básicas",
+			"Interfaz interactiva",
+			"Diseño con Sass",
+			"Aplicación ligera"
+		],
+		github: "https://github.com/theblaze98/calculadora-web",
+		demo: "https://theblaze98.github.io/calculadora-web",
+		image: "calculadora-web"
 	}
 ];
 
@@ -590,28 +725,10 @@ function Projects() {
 
 const experiences = [
   {
-    period: "2024 — Presente",
+    period: "2025 — 2025",
     title: "Desarrollador Full Stack Freelance",
-    description: "Creando aplicaciones web completas para clientes. Entregando soluciones listas para producción con React, Next.js, Node.js y TypeScript.",
+    description: "Desarrollo de una aplicación web para gestión de inventario de un pequeño negocio, participando en el análisis de requerimientos funcionales y fiscales, así como en la implementación de módulos para productos, entradas, salidas, autoconsumos, retiros y reportes administrativos utilizando React, Node.js, Express y SQLite.",
     icon: Briefcase
-  },
-  {
-    period: "2024 — Presente",
-    title: "Desarrollo de APIs Backend",
-    description: "Diseñando e implementando APIs REST con Express y NestJS. Enfoque en autenticación, autorización, validación de datos y manejo de errores.",
-    icon: Code
-  },
-  {
-    period: "2023 — 2024",
-    title: "Sistemas de Inventario y Datos",
-    description: "Desarrollé sistemas de gestión de inventario con seguimiento en tiempo real, bases de datos PostgreSQL y paneles de control basados en roles para operaciones comerciales.",
-    icon: Database
-  },
-  {
-    period: "2023 — Presente",
-    title: "Desarrollo de Aplicaciones Web",
-    description: "Construyendo aplicaciones web responsivas, accesibles y de alto rendimiento. Implementando pipelines de CI/CD y despliegues con Docker.",
-    icon: Cloud
   }
 ];
 const timelineVariants = {

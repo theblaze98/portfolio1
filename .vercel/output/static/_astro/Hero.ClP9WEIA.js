@@ -8,7 +8,7 @@ import{j as e}from"./jsx-runtime.D_zvdyIk.js";import{m as t}from"./proxy.DbN9s5x
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const d=[["path",{d:"m6 9 6 6 6-6",key:"qrunsl"}]],x=i("ChevronDown",d),m={src:"/_astro/img.DpCPHjrK.webp"},h=`const developer = {
+ */const d=[["path",{d:"m6 9 6 6 6-6",key:"qrunsl"}]],x=i("ChevronDown",d),m={src:"/_astro/img.DAjffwNs.webp"},h=`const developer = {
   name: "Dionicio Vargas",
   role: "Full Stack Developer",
   stack: ["React", "Next.js", "Node.js", "TypeScript"],
