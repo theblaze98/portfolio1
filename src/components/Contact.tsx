@@ -41,7 +41,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-github-blue text-white rounded-lg font-medium text-sm hover:bg-blue-500 transition-colors shadow-lg shadow-blue-500/10 mb-6"
             >
               <Mail className="h-4 w-4" />
-              Enviar Correo
+              dioniciovargas1226@gmail.com
               <ArrowUpRight className="h-4 w-4" />
             </a>
 
@@ -63,14 +63,6 @@ export default function Contact() {
               >
                 <LinkedinIcon className="h-4 w-4" />
                 LinkedIn
-              </a>
-              <a
-                href="/resume.pdf"
-                download
-                className="flex items-center gap-2 text-sm text-github-text-secondary hover:text-github-text transition-colors"
-              >
-                <Download className="h-4 w-4" />
-                Currículum
               </a>
             </div>
           </div>

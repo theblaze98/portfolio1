@@ -106,7 +106,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 border border-github-border rounded-lg text-sm font-medium text-github-text hover:bg-github-surface transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                Contáctame
+                dioniciovargas1226@gmail.com
               </a>
             </motion.div>
           </div>
